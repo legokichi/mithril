@@ -54,7 +54,7 @@ templateConverter.Template = function recurse() {
 			
 			var style = ""
 			if (el.attrs.style) {
-				virtual += ", {style: " + ("{\"" + el.attrs.style.replace(/:/g, "\": \"").replace(/;/g, "\", \"") + "}").replace(/, "}|"}/, "}") + "}"
+				virtual += ", {style: " + ("{\"" + el.attrs.style.replace(/:/g, "\": \"").replace(/;|$/g, "\", \"") + "}").replace(/, "}|"}/, "}") + "}";
 			}
 			
 			if (el.children.length > 0) {
